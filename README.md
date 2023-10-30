@@ -4,7 +4,7 @@ Calculadora de notas
 
 # Integrantes: 
 Vega F, Stiwarth. G1
-Castrillo D, Camilo. G2
+Castrillon D, Camilo. G2
 
 ## Getting Started
 
