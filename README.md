@@ -2,6 +2,10 @@
 
 Calculadora de notas
 
+# Integrantes: 
+Vega F, Stiwarth. G1
+Castrillon D, Camilo. G2
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
