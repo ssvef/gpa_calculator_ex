@@ -32,7 +32,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // Grades instruccions: >=0 and <2,9: R, >3 and <=5 :A
+  // Grades instruccions: >=0 and <2,9: F, >3 and <=5 :A
    final gradeone= TextEditingController();
    final gradetwo= TextEditingController();
    final gradethree= TextEditingController();
@@ -46,9 +46,9 @@ class _MyHomePageState extends State<MyHomePage> {
           double.parse(gradethree.text) + double.parse(gradefour.text)) / 4;
 
       if(_calculate >=0 && _calculate <2.9){
-      _msg="Your grade point average is: ${_calculate.toStringAsFixed(2)} You Reproved.";
-      }else if(_calculate >3 && _calculate <5){
-        _msg="Your grade point average is: ${_calculate.toStringAsFixed(2)} You approved.";}
+      _msg="Your grade point average is: ${_calculate.toStringAsFixed(2)}. You Failure.";
+      }else if(_calculate >=3 && _calculate <=5){
+        _msg="Your grade point average is: ${_calculate.toStringAsFixed(2)}.  You Approved.";}
       else {
         _msg="The values entered are incorrect. Keep in mind that you must enter grades between 0 and 5 points.";}
     });//SetState
@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             const Text(
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              'Please enter the grades to calculate the total average',
+              'Please enter the grades to calculate the total average.',
             ),
             const SizedBox(
               height: 20.0,
@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: "Here the first grade. (Optional)",
+                labelText: "Here the first grade. Required",
               ),
             ),
             const SizedBox(
@@ -95,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: "Here the second grade. (Optional)",
+                labelText: "Here the second grade. Required",
               ),
             ),
             const SizedBox(
@@ -106,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: "Here the third grade. (Optional)",
+                labelText: "Here the third grade. Required",
               ),
             ),
             const SizedBox(
@@ -117,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: "Here the fourth grade. (Optional)",
+                labelText: "Here the fourth grade. Required",
               ),
             ),
             const SizedBox(
@@ -131,11 +131,13 @@ class _MyHomePageState extends State<MyHomePage> {
               elevation: 0,
               color: Theme.of(context).colorScheme.surfaceVariant,
               child: SizedBox(
-                width: 300,
+                width: 310,
                 height: 80,
                 child: Center(
-                  child: Text(_msg),
-              ),
+                  child: Text(_msg,
+                    textAlign: TextAlign.center
+                  ),
+                ),
             ),
         ),
     ],
